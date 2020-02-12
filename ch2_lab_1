@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	float input=0,count=0,sum=0,maximum=0,minimum=0;
+	float average=0;
+	while(input>=0){
+		cout<<"put data: ";
+		cin>>input;
+		count+=1;
+		sum = sum+input;
+		if(maximum<input)
+			maximum=input;
+		if(minimum>input)
+			minimum=input;
+	}
+	average = sum/count;
+	cout<<"average : "<<average<<endl;
+	cout<<"maximum : "<<maximum<<endl;
+	cout<<"minimum : "<<minimum<<endl;
+}
