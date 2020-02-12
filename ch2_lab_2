@@ -1,0 +1,12 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main(void){
+	double money=10000000, rate=1.07;
+	int year=0;
+	while(money<=20000000){
+		money = money*rate;
+		year+=1;
+	}
+	cout<<year<<endl;
+}
