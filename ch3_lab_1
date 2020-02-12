@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int get_largest_1(int array[],int n);
+int get_largest_2(int *parray, int n);
+int main(void){
+	int n=10,num,largest;
+	int array[n];
+	for(int i=0;i<n;i++){
+		cin>>num;
+		array[i]=num;
+	}
+	largest = get_largest_1(array,n);
+	cout<<largest<<endl;
+	largest = get_largest_2(array,n);
+	cout<<largest<<endl;
+}
+int get_largest_1(int array[],int n){
+	int max=array[0];
+	for(int i=0;i<n;i++){
+		if(array[i] > max)
+			max=array[i];
+	}
+	return max;
+}
+
+int get_largest_2(int* parray, int n){
+	int max=parray[0];
+	for(int i= 0;i<n;i++){
+		if(parray[i] > max)
+			max=parray[i];
+	}
+	return max;
+}
