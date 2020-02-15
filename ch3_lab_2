@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <math.h>
+using namespace std;
+
+int main(void){
+	string str;
+	cin>>str;
+	string buf;
+	stringstream ss(str);
+	vector<string> tokens;
+	while (getline(ss,buf,' ')){
+		tokens.push_back(buf);
+	}
+	float num1 = stof(tokens[0]);
+	float num2 = stof(tokens[2]);
+	if(tokens[1] == "add")
+		cout<<num1+num2<<endl;
+	else if(tokens[1] == "minus")
+		cout<<num1-num2<<endl;
+	else if(tokens[1] == "multiply")
+		cout<<num1*num2 << endl;
+	else if(tokens[1] == "divide")
+		cout<<num1/num2<<endl;
+	else
+		cout<<pow(num1,num2)<<endl;
+	return 0;
+}
