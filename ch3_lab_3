@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+
+int main(void){
+	int count = 0;
+	string line;
+	cin>>line;
+	for(int j=97;j<122;j++){
+		for(int i=0;i<line.length();i++){
+			char alpa = (char)j;
+			if(line[i] == alpa)
+				count+=1;
+		}
+		cout<<(char)j<<": "<<count<<endl;
+		count=0;
+	}
+	return 0;
+}
