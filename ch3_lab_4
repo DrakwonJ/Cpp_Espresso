@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+void sub_string(char *s, int start, int n, char *result);
+int main(void){
+	char *str=NULL;
+	char *result=NULL;
+	str = new char[100];
+	result = new char[100];
+	int start, length;
+	cout<<"put string: ";
+	cin>>str;
+	cout<<"start point: ";
+	cin>>start;
+	cout<<"length: ";
+	cin>>length;
+	sub_string(str, start, length, result);
+	delete[] result;
+	delete[] str;
+}
+void sub_string(char *s, int start, int n, char *result){
+	start-=1;
+	for(int i=0;i<n;i++){
+		result[i]=s[start];
+		start+=1;
+	}
+	cout<<result<<endl;
+}
