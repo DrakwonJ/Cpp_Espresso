@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+class Box{
+	private:
+	int width;
+	int length;
+	int height;
+	public:
+	int get_width();
+	int get_length();
+	int get_height();
+	void set_width(int width);
+	void set_height(int height);
+	void set_length(int length);
+	int getVolume();
+	void print();
+	void get_input(int width, int length, int height);
+};
+int Box::get_width(){
+		return width;
+	} 
+int Box::get_length(){
+		return length;
+	}
+int Box::get_height(){
+		return height;
+	}
+void Box::set_width(int w){
+		width = w;
+	}
+void Box::set_height(int h){
+		height = h;
+	}
+void Box::set_length(int l){
+		length = l;
+	}
+int Box::getVolume(){
+		int volume = width * height * length;
+		return volume;
+	}
+void Box::print(){
+		cout<<"Width: "<<width<<endl;
+		cout<<"Length: "<<length<<endl;
+		cout<<"Height: "<<height<<endl;
+	}
+void Box::get_input(int width, int length, int height){
+		set_width(width);
+		set_length(length);
+		set_height(height);
+	}
+
+int main(void){
+	Box box1;
+	int width,height,length;
+	cout<<"width,length,height : ??"<<endl;
+	cin>>width>>length>>height;
+	box1.get_input(width,length,height);
+	int volume = box1.getVolume();
+	cout<<"Volume: "<<volume<<endl;
+	box1.print();
+}
