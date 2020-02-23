@@ -1,0 +1,98 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using namespace std;
+class Point{
+	private:
+		int x;
+		int y;
+	public:
+	Point(){
+		x=0, y=0;
+	}
+	Point(int a, int b){
+		x=a;
+		y=b;
+	}
+	void print(){
+		cout<<"("<<x<<", "<<y<<")"<<endl;
+	}
+	Point getCenter(){
+		return Point(x,y);
+	}
+	void setCenter(Point p){
+		x = p.x;
+		y = p.y;
+	}
+};
+class Circle{
+	private:
+		double radius;
+		Point center;
+	public:
+	Circle(){
+		cout<<"call default"<<endl;
+		setRadius(0);
+		setCenter(Point(0,0));
+	}
+	void print(){
+		cout<<"center: ";
+		center.print();
+		cout<<"radius: "<<radius<<endl;
+	}
+	Circle(double r){
+		setRadius(r);
+	}
+	Circle(Point p){
+		setRadius(0);
+		setCenter(p);
+	}
+	void setCenter(Point p){
+		center.setCenter(p);
+	}
+	void setRadius(double r){
+		radius = r;
+	}
+	Point getCenter(){
+		Point re = center.getCenter();
+		return re;
+	}
+	double getRadius(){
+		return radius;
+	}
+	double getArea(){
+		double area = radius*radius*3.14;
+		return area;
+	}
+	double getPerimeter(){
+		double perimeter = 2*radius * 3.14;
+		return perimeter;
+	}
+	~Circle(){
+		cout<<"delete call"<<endl;
+	}
+};
+
+int main(void){
+	Circle c1;
+	Circle c2(Point(5,4));
+	Circle c3(5.0);
+	Circle c4(c1);
+	Circle c5 = Circle(5.0);
+	double area1, area2, area3, area4, area5, per1, per2, per3, per4, per5;
+	area1 = c1.getArea();
+	area2 = c2.getArea();
+	area3 = c3.getArea();
+	area4 = c4.getArea();
+	area5 = c5.getArea();
+	per1 = c1.getPerimeter();
+	per2 = c2.getPerimeter();
+	per3 = c3.getPerimeter();
+	per4 = c4.getPerimeter();
+	per5 = c5.getPerimeter();
+	cout<<area1<<" "<<area2<<" "<<area3<<" "<<area4<<" "<<area5<<endl;
+	cout<<per1<<" "<<per2<<" "<<per3<<" "<<per4<<" "<<per5<<endl;
+	c2.print();
+	c3.print();
+	return 0;
+}
